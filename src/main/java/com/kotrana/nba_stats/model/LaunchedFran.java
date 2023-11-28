@@ -8,10 +8,22 @@ import lombok.Setter;
 import java.sql.Date;
 import java.sql.Time;
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class LaunchedFran {
     private String minutes;
+
+    public LaunchedFran() {
+    }
+
+    public LaunchedFran(String minutes) {
+        this.minutes = minutes;
+    }
+
+    public String getMinutes() {
+        return minutes;
+    }
+
+    public void setMinutes(String minutes) {
+        this.minutes = minutes;
+    }
 }

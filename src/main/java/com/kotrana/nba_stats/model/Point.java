@@ -7,11 +7,32 @@ import lombok.Setter;
 
 import java.sql.Date;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Point {
     private String heure;
     private int points;
+
+    public Point() {
+    }
+
+    public Point(String heure, int points) {
+        this.heure = heure;
+        this.points = points;
+    }
+
+    public String getHeure() {
+        return heure;
+    }
+
+    public void setHeure(String heure) {
+        this.heure = heure;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 }

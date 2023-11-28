@@ -7,10 +7,22 @@ import lombok.Setter;
 
 import java.sql.Date;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class PasseDecisif {
     private String heure;
+
+    public PasseDecisif() {
+    }
+
+    public PasseDecisif(String heure) {
+        this.heure = heure;
+    }
+
+    public String getHeure() {
+        return heure;
+    }
+
+    public void setHeure(String heure) {
+        this.heure = heure;
+    }
 }

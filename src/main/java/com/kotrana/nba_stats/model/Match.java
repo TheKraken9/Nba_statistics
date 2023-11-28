@@ -7,10 +7,22 @@ import lombok.Setter;
 
 import java.sql.Date;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Match {
     private Date date;
+
+    public Match() {
+    }
+
+    public Match(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }
