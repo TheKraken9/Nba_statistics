@@ -49,41 +49,4 @@ public class JoueurController {
             return new ResponseEntity<String>("Error creating joueur", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @PutMapping("/joueur/{id}")
-    public ResponseEntity<?> updateJoueur(@PathVariable String id, @RequestBody Joueur joueur) {
-        try{
-            Joueur joueurToUpdate = joueurRepository.findById(id).get();
-            joueurToUpdate.setNom(joueur.getNom());
-            joueurToUpdate.setPrenom(joueur.getPrenom());
-            joueurToUpdate.setAge(joueur.getAge());
-            joueurToUpdate.setTaille(joueur.getTaille());
-            joueurToUpdate.setPoids(joueur.getPoids());
-            joueurToUpdate.setPoste(joueur.getPoste());
-            joueurToUpdate.setNumero(joueur.getNumero());
-            joueurToUpdate.setEquipe(joueur.getEquipe());
-            joueurToUpdate.setSalaire(joueur.getSalaire());
-            joueurToUpdate.setDateNaissance(joueur.getDateNaissance());
-            joueurToUpdate.setVilleNaissance(joueur.getVilleNaissance());
-            joueurToUpdate.setPaysNaissance(joueur.getPaysNaissance());
-            joueurToUpdate.setUniversite(joueur.getUniversite());
-            joueurToUpdate.setDraft(joueur.getDraft());
-            joueurToUpdate.setNbSelectionsAllStar(joueur.getNbSelectionsAllStar());
-            joueurToUpdate.setUrlPhoto(joueur.getUrlPhoto());
-            joueurRepository.save(joueurToUpdate);
-            return new ResponseEntity<Joueur>(joueurToUpdate, HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<String>("Error updating joueur", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @DeleteMapping("/joueur/{id}")
-    public ResponseEntity<?> deleteJoueur(@PathVariable String id) {
-        try{
-            joueurRepository.deleteById(id);
-            return new ResponseEntity<String>("Joueur deleted", HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<String>("Error deleting joueur", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }
