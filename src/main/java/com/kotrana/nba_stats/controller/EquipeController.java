@@ -35,30 +35,4 @@ public class EquipeController {
             return new ResponseEntity<String>("Error creating equipe", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @PutMapping("/equipe/{id}")
-public ResponseEntity<?> updateEquipe(@PathVariable String id, @RequestBody Equipe equipe) {
-        try{
-            Equipe equipeToUpdate = equipeRepository.findById(id).get();
-            equipeToUpdate.setNom(equipe.getNom());
-            equipeToUpdate.setVille(equipe.getVille());
-            equipeToUpdate.setConference(equipe.getConference());
-            equipeToUpdate.setDivision(equipe.getDivision());
-            equipeToUpdate.setUrlLogo(equipe.getUrlLogo());
-            equipeRepository.save(equipeToUpdate);
-            return new ResponseEntity<Equipe>(equipeToUpdate, HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<String>("Error updating equipe", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @DeleteMapping("/equipe/{id}")
-    public ResponseEntity<?> deleteEquipe(@PathVariable String id) {
-        try{
-            equipeRepository.deleteById(id);
-            return new ResponseEntity<String>("Equipe deleted", HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<String>("Error deleting equipe", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }
