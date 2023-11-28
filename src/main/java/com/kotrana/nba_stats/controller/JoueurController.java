@@ -40,7 +40,7 @@ public class JoueurController {
         }
     }
 
-    @PostMapping("/joueur")
+    /*@PostMapping("/joueur")
     public ResponseEntity<?> createJoueur(@RequestBody Joueur joueur) {
         try{
             joueurRepository.save(joueur);
@@ -48,5 +48,5 @@ public class JoueurController {
         }catch (Exception e){
             return new ResponseEntity<String>("Error creating joueur", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    }*/
 }
